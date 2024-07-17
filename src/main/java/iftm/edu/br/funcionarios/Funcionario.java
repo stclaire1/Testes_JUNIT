@@ -45,17 +45,18 @@ public class Funcionario {
           this.valorHora = validaValorHorasTrabalhadas(valorHora);
     }
 
-     public double validaValorHorasTrabalhadas(double valorHora){
+    // Isabela
+     /*public double validaValorHorasTrabalhadas(double valorHora){
         double salarioMinino = 1320.00;
         double limiteInferior = 0.04;
         double limiteSuperior = 0.10;
         if(( valorHora < limiteInferior * salarioMinino) || (valorHora > limiteSuperior * salarioMinino)){
             throw new IllegalArgumentException("O valor da hora deve ser entre 4% e 10% do salário mínimo");
         }else {
-            return horasTrabalhadas;
+            return valorHora;
         }
 
-    }
+    }*/
 
     public Double calcularPagamento() {
         // TODO Auto-generated method stub
