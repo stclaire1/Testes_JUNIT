@@ -9,8 +9,8 @@ public class Funcionario {
 
     public Funcionario(String nome, int horasTrabalhadas, Double valorHora) {
         this.nome = nome;
-        this.horasTrabalhadas = horasTrabalhadas;
-        this.valorHora = valorHora;
+        this.horasTrabalhadas = validaHorasTrabalhadas(horasTrabalhadas);
+        this.valorHora = validaValorHorasTrabalhadas(valorHora);
     }
 
     public String getNome() {
@@ -42,7 +42,19 @@ public class Funcionario {
     }
 
     public void setValorHora(Double valorHora) {
-        this.valorHora = valorHora;
+          this.valorHora = validaValorHorasTrabalhadas(valorHora);
+    }
+
+     public double validaValorHorasTrabalhadas(double valorHora){
+        double salarioMinino = 1320.00;
+        double limiteInferior = 0.04;
+        double limiteSuperior = 0.10;
+        if(( valorHora < limiteInferior * salarioMinino) || (valorHora > limiteSuperior * salarioMinino)){
+            throw new IllegalArgumentException("O valor da hora deve ser entre 4% e 10% do salário mínimo");
+        }else {
+            return horasTrabalhadas;
+        }
+
     }
 
     public Double calcularPagamento() {
