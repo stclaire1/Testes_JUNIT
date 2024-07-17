@@ -99,4 +99,20 @@ public class FuncionarioTests {
     //     assertEquals();
 
     // }
+
+    @Test
+    @DisplayName("Caso de teste para validar a construção com valor hora inválido.")
+    public void testarConstrutorEntradaValorHoraInvalida() {
+    
+        //Arrange
+        String nome = "Isabela";
+        int horasTrabalhadasValidas = 40;
+        double valorHoraInvalido = 300.00;
+
+        //Act and assert
+        assertThrows(IllegalArgumentException.class,
+        () -> {
+            funcionario = new Funcionario(nome, horasTrabalhadasValidas, valorHoraInvalido);
+        });
+    }
 }
