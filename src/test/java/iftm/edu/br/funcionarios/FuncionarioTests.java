@@ -62,23 +62,21 @@ public class FuncionarioTests {
         });
     }
 
-    //implementar depois
+    @Test
+    @DisplayName("Verifica se o valor do pagamento é válido e não está no limite inferior de R$ 1320.00")
+    public void TestarPagamentoValidoForaLimite() {
+        //Arrange
+        int horasTrabalhadasValidas = 30;
+        Double valorHoraValido = 60.00;
+        Double pagamentoEsperado = 1800.00;
 
-    // @Test
-    // @DisplayName("Verifica se o valor do pagamento é válido e não está no limite inferior de R$ 1320.00")
-    // public void TestarPagamentoValidoForaLimite() {
-    //     //Arrange
-    //     int horasTrabalhadasValidas = 30;
-    //     Double valorHoraValido = 60.00;
-    //     Double pagamentoEsperado = 1800.00;
+        //Act
+        funcionario = new Funcionario("Ana Clara", horasTrabalhadasValidas, valorHoraValido);
+        Double pagamentoObtido = funcionario.calcularPagamento();
 
-    //     //Act
-    //     funcionario = new Funcionario("Ana Clara", horasTrabalhadasValidas, valorHoraValido);
-    //     Double pagamentoObtido = funcionario.calcularPagamento();
-
-    //     //Assert
-    //     assertEquals(pagamentoEsperado, pagamentoObtido);
-    // }
+        //Assert
+        assertEquals(pagamentoEsperado, pagamentoObtido);
+    }
 
 
     // @Test
