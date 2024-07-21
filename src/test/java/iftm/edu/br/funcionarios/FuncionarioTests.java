@@ -113,4 +113,48 @@ public class FuncionarioTests {
             funcionario = new Funcionario(nome, horasTrabalhadasValidas, valorHoraInvalido);
         });
     }
+
+    @Test
+    @DisplayName("Caso de teste para validar a modificação do valor hora com entrada válida.")
+    public void testarModificarValorHoraEntradaValida() {
+        // Arrange
+        double valorHoraValida = 60.00;
+
+        // Act
+        funcionario.setValorHora(valorHoraValida);
+
+        // Assert
+        assertEquals(valorHoraValida, funcionario.getValorHora());
+    }
+
+    @Test
+    @DisplayName("Caso de teste para validar a construção com pagamento inválido.")
+    public void testarConstrutorPagamentoInvalido() {
+        // Arrange
+        String nome = "João";
+        int horasTrabalhadas = 10;
+        double valorHora = 20.00;
+
+        // Act and Assert
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Funcionario(nome, horasTrabalhadas, valorHora);
+        });
+    }
+
+    @Test
+    @DisplayName("Caso de teste para validar um pagamento igual ao limite")
+    public void testarConstrutorPagamentoNoLimite() {
+        // Arrange
+        int horasTrabalhadas = 20;
+        double valorHora = 66.00;
+        double pagamentoEsperado = 1320.00;
+
+        // Act
+        funcionario = new Funcionario("Isabela", horasTrabalhadas, valorHora);
+        double pagamentoObtido = funcionario.calcularPagamento();
+
+        // Assert
+        assertEquals(pagamentoEsperado, pagamentoObtido);
+    }
+
 }
