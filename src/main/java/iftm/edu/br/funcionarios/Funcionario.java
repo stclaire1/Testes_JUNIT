@@ -32,7 +32,7 @@ public class Funcionario {
         this.horasTrabalhadas = validaHorasTrabalhadas(horasTrabalhadas);
     }
 
-    private int validaHorasTrabalhadas(int horasTrabalhadas) {
+    public int validaHorasTrabalhadas(int horasTrabalhadas) {
         if (horasTrabalhadas > 40) {
             throw new IllegalArgumentException(
                     "O número de horas trabalhadas por funcionário próprio deve ser menor ou igual a 40!");
@@ -69,5 +69,9 @@ public class Funcionario {
 
     public Double calcularPagamento() {
         return horasTrabalhadas * valorHora;
+    }
+
+    public static double getSalariominino() {
+        return salarioMinino;
     }
 }
