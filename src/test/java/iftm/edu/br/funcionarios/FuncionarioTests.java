@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class FuncionarioTests {
+class FuncionarioTests {
     private Funcionario funcionario;
 
     @BeforeEach
@@ -18,7 +18,7 @@ public class FuncionarioTests {
     //Casos de teste para validar a quantidade de horas trabalhadas
     @Test
     @DisplayName("Verifica se o valor de horas trabalhadas é válido e não está no limite máximo de 40 horas")
-    public void TestarHorasTrabalhadasValidasForaDoLimite() {
+    void TestarHorasTrabalhadasValidasForaDoLimite() {
         //Arrange
         int horasTrabalhadasValidas = 35;
         Double valorHoraValido = 65.00;
@@ -34,7 +34,7 @@ public class FuncionarioTests {
 
     @Test
     @DisplayName("Verifica se o valor de horas trabalhadas é válido e está no limite máximo de 40 horas")
-    public void TestarHorasTrabalhadasValidasNoLimite() {
+    void TestarHorasTrabalhadasValidasNoLimite() {
         //Arrange
         int horasTrabalhadasValidas = 40;
         Double valorHoraValido = 70.00;
@@ -50,7 +50,7 @@ public class FuncionarioTests {
 
     @Test
     @DisplayName("Verifica se o valor de horas trabalhadas é inválido e está fora do limite máximo de 40 horas")
-    public void TestarHorasTrabalhadasInvalidasForaDoLimite() {
+    void TestarHorasTrabalhadasInvalidasForaDoLimite() {
         //Arrange
         int horasTrabalhadasInvalidas = 45;
         Double valorHoraValido = 70.00;
@@ -64,7 +64,7 @@ public class FuncionarioTests {
 
     @Test
     @DisplayName("Verifica se o valor do pagamento é válido e não está no limite inferior de R$ 1320.00")
-    public void TestarPagamentoValidoForaLimite() {
+    void TestarPagamentoValidoForaLimite() {
         //Arrange
         int horasTrabalhadasValidas = 30;
         Double valorHoraValido = 60.00;
@@ -100,7 +100,7 @@ public class FuncionarioTests {
 
     @Test
     @DisplayName("Caso de teste para validar a construção com valor hora inválido.")
-    public void testarConstrutorEntradaValorHoraInvalida() {
+    void testarConstrutorEntradaValorHoraInvalida() {
     
         //Arrange
         String nome = "Isabela";
@@ -116,7 +116,7 @@ public class FuncionarioTests {
 
     @Test
     @DisplayName("Caso de teste para validar a modificação do valor hora com entrada válida.")
-    public void testarModificarValorHoraEntradaValida() {
+    void testarModificarValorHoraEntradaValida() {
         // Arrange
         double valorHoraValida = 60.00;
 
@@ -129,7 +129,7 @@ public class FuncionarioTests {
 
     @Test
     @DisplayName("Caso de teste para validar a construção com pagamento inválido.")
-    public void testarConstrutorPagamentoInvalido() {
+    void testarConstrutorPagamentoInvalido() {
         // Arrange
         String nome = "João";
         int horasTrabalhadas = 10;
@@ -143,7 +143,7 @@ public class FuncionarioTests {
 
     @Test
     @DisplayName("Caso de teste para validar um pagamento igual ao limite")
-    public void testarConstrutorPagamentoNoLimite() {
+    void testarConstrutorPagamentoNoLimite() {
         // Arrange
         int horasTrabalhadas = 20;
         double valorHora = 66.00;
