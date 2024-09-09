@@ -2,7 +2,6 @@ package iftm.edu.br.funcionarios;
 
 public class FuncionarioTercerizado extends Funcionario{
     private Double despesasAdicionais;
-    private static final double salarioMinino = 1320.00;
 
     public FuncionarioTercerizado() {
 
