@@ -79,25 +79,6 @@ class FuncionarioTests {
     }
 
 
-    // @Test
-    // // @DisplayName("Verifica se o construtor é inicializado com valores válidos")
-    // public void testarConstrutorEntradasValidas() {
-    //     //Arrange
-    //     String nomeValido = "Ana Clara Custodio";
-    //     int horasTrabalhadasValida = 35;
-    //     Double valorHoraValida = 65;
-
-    //     //Act
-    //     funcionario = new Funcionario(nomeValido, horasTrabalhadasValida, valorHoraValida);
-    //     String nomeObtido = funcionario.getNome();
-    //     int horasTrabalhadasObtida = funcionario.getHorasTrabalhadas();
-    //     Double valorHoraObtida = funcionario.getValorHora();
-
-    //     //Assert
-    //     assertEquals();
-
-    // }
-
     @Test
     @DisplayName("Caso de teste para validar a construção com valor hora inválido.")
     void testarConstrutorEntradaValorHoraInvalida() {
